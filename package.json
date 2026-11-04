@@ -1,0 +1,38 @@
+{
+  "name": "vantage-case-timeline",
+  "version": "1.0.0",
+  "description": "Vantage Case Timeline - Power BI Custom Visual",
+  "main": "src/visual.ts",
+  "scripts": {
+    "pbiviz": "pbiviz",
+    "start": "pbiviz start",
+    "package": "pbiviz package",
+    "lint": "eslint src/**/*.ts"
+  },
+  "dependencies": {
+    "@types/papaparse": "^5.5.2",
+    "@xyflow/react": "^12.8.3",
+    "d3": "^7.9.0",
+    "papaparse": "^5.7.0",
+    "powerbi-models": "^1.13.5",
+    "powerbi-visuals-api": "~5.11.0",
+    "powerbi-visuals-utils-dataviewutils": "^6.1.0",
+    "powerbi-visuals-utils-formattingutils": "^6.1.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@types/d3": "^7.4.3",
+    "@types/react": "^19.1.10",
+    "@types/react-dom": "^19.1.7",
+    "css-loader": "^7.1.2",
+    "less": "^4.2.0",
+    "less-loader": "^12.2.0",
+    "mini-css-extract-plugin": "^2.9.0",
+    "powerbi-visuals-tools": "~5.5.0",
+    "style-loader": "^4.0.0",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.9.2",
+    "webpack": "^5.96.1"
+  }
+}

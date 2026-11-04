@@ -1,0 +1,268 @@
+/* Vantage Case Timeline — Power BI Custom Visual Styles */
+/* Replicates the web app's Design 2 styling (Manrope, card borders, eyebrows) */
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
+@font-main: 'Manrope', 'Inter', system-ui, -apple-system, sans-serif;
+@radius-card: 8px;
+@radius-pill: 20px;
+@radius-date: 7px;
+@text-primary: #2a2e38;
+@text-muted: #6e7280;
+@border-light: #e0e2e8;
+
+.vantage-timeline-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: @font-main;
+  background: #ffffff;
+
+  .react-flow {
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+  }
+
+  /* ── Node card (Design 2 style) ── */
+  .timeline-node {
+    border-radius: @radius-card;
+    padding: 8px 12px;
+    font-family: @font-main;
+    border-width: 2px;
+    border-style: solid;
+    background: #ffffff;
+    min-width: 150px;
+    max-width: 360px;
+    box-sizing: border-box;
+  }
+
+  /* ── Eyebrow (uppercase category label) ── */
+  .node-eyebrow {
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+    line-height: 1.4;
+    text-align: center;
+    margin-bottom: 2px;
+  }
+
+  /* ── Title ── */
+  .node-title {
+    font-weight: 700;
+    font-size: 12.5px;
+    color: @text-primary;
+    line-height: 1.35;
+    margin-bottom: 8px;
+  }
+
+  /* ── Detail grid (two-column key/value) ── */
+  .node-detail-grid {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 4px 10px;
+    font-size: 12px;
+    margin-bottom: 8px;
+
+    .detail-label {
+      font-weight: 700;
+      opacity: 0.85;
+      color: @text-primary;
+    }
+
+    .detail-value {
+      font-weight: 600;
+      font-size: 12.5px;
+      color: @text-primary;
+    }
+  }
+
+  /* ── Dates row ── */
+  .node-dates {
+    font-size: 11px;
+    color: @text-muted;
+    margin-bottom: 4px;
+  }
+
+  /* ── Detail text ── */
+  .node-detail {
+    font-size: 11px;
+    color: @text-muted;
+    margin-top: 4px;
+  }
+
+  /* ── Date header pill (flat top, rounded bottom) ── */
+  .node-date-header {
+    font-family: @font-main;
+    font-weight: 700;
+    font-size: 12.5px;
+    color: #2e3a5c;
+    background: #ffffff;
+    border: 1.5px solid @border-light;
+    border-radius: 0 0 @radius-date @radius-date;
+    padding: 6px 14px;
+    text-align: center;
+    white-space: nowrap;
+    min-width: 100px;
+    box-sizing: border-box;
+
+    .date-header-accent {
+      height: 2.5px;
+      border-radius: 2px 2px 0 0;
+      margin: -6px -14px 6px -14px;
+    }
+  }
+
+  /* ── Range end pill ── */
+  .node-range-end {
+    padding: 4px 12px;
+    border-radius: @radius-pill;
+    border: none;
+    font-size: 11px;
+    font-weight: 600;
+    font-family: @font-main;
+    color: #ffffff;
+    white-space: nowrap;
+    text-align: center;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  }
+
+  /* ── Edge labels ── */
+  .react-flow__edge-text {
+    font-size: 10px;
+    font-family: @font-main;
+    fill: @text-primary;
+  }
+
+  /* ── Controls ── */
+  .react-flow__controls {
+    border-radius: 8px;
+    border: 1px solid @border-light;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.07);
+    overflow: hidden;
+  }
+
+  /* ── MiniMap ── */
+  .react-flow__minimap {
+    border-radius: 12px;
+    border: 1px solid #d4d7de;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.07);
+  }
+
+  /* ── Empty state ── */
+  .empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: @text-muted;
+    font-size: 14px;
+    text-align: center;
+    padding: 24px;
+    font-family: @font-main;
+
+    .empty-state-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: #f0f2f5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      font-size: 20px;
+    }
+
+    .empty-state-title {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: @text-primary;
+    }
+
+    .empty-state-hint {
+      font-size: 12px;
+      max-width: 280px;
+      line-height: 1.5;
+    }
+  }
+}
+
+/* ── Dark mode ── */
+.vantage-timeline-container.dark-mode {
+  background: #11131a;
+
+  .react-flow {
+    background: #11131a;
+  }
+
+  .timeline-node {
+    background: #1c1f2a;
+    color: #e4e5e7;
+
+    .node-title {
+      color: #e4e5e7;
+    }
+
+    .node-eyebrow {
+      color: #ffffff;
+    }
+
+    .node-detail-grid {
+      .detail-label,
+      .detail-value {
+        color: #c8c9cc;
+      }
+    }
+
+    .node-detail {
+      color: #8b8d94;
+    }
+
+    .node-dates {
+      color: #8b8d94;
+    }
+  }
+
+  .node-date-header {
+    background: rgba(255, 255, 255, 0.07);
+    color: #ffffff;
+    border-color: #282c38;
+    border-width: 2px;
+  }
+
+  .empty-state {
+    color: #8b8d94;
+
+    .empty-state-icon {
+      background: #1e2130;
+    }
+
+    .empty-state-title {
+      color: #e4e5e7;
+    }
+  }
+
+  .react-flow__controls {
+    border-color: #282c38;
+    background: #1c1f2a;
+  }
+
+  .react-flow__minimap {
+    border-color: #282c38;
+    background: #1c1f2a;
+  }
+}
+
+/* ── MiniMap viewport styling ── */
+.react-flow__minimap-mask {
+  fill: rgba(0, 0, 0, 0.06);
+}
+
+.react-flow__minimap-viewport {
+  stroke: rgba(100, 116, 139, 0.5);
+  stroke-width: 2px;
+  fill: transparent;
+}

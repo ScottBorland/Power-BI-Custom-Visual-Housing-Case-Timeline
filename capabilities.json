@@ -1,0 +1,184 @@
+{
+  "dataRoles": [
+    {
+      "displayName": "Case Number",
+      "name": "caseNumber",
+      "kind": "Grouping",
+      "description": "The case identifier used to link all records"
+    },
+    {
+      "displayName": "Event Type",
+      "name": "eventType",
+      "kind": "Grouping",
+      "description": "Category of event: Hazard, MissingEpisode, AssetPlus, Intervention, Offence, Exclusion"
+    },
+    {
+      "displayName": "Event Label",
+      "name": "eventLabel",
+      "kind": "Grouping",
+      "description": "Display label for the event (e.g. hazard type, intervention type, offence description)"
+    },
+    {
+      "displayName": "Start Date",
+      "name": "startDate",
+      "kind": "Grouping",
+      "description": "When the event began"
+    },
+    {
+      "displayName": "End Date",
+      "name": "endDate",
+      "kind": "Grouping",
+      "description": "When the event ended (blank if ongoing)"
+    },
+    {
+      "displayName": "Severity / Status",
+      "name": "severity",
+      "kind": "Grouping",
+      "description": "Severity level or status (e.g. Significant, Moderate, Emerging for hazards)"
+    },
+    {
+      "displayName": "Detail Fields",
+      "name": "details",
+      "kind": "Grouping",
+      "description": "Additional detail columns to show in tooltips or expanded cards"
+    },
+    {
+      "displayName": "CCE Risk",
+      "name": "cceRisk",
+      "kind": "Grouping",
+      "description": "Child Criminal Exploitation risk level (for Contextual Risk Assessments)"
+    },
+    {
+      "displayName": "CSE Risk",
+      "name": "cseRisk",
+      "kind": "Grouping",
+      "description": "Child Sexual Exploitation risk level (for Contextual Risk Assessments)"
+    },
+    {
+      "displayName": "PoP/CR Risk",
+      "name": "popcrRisk",
+      "kind": "Grouping",
+      "description": "Peer on Peer / Contextual risk level (for Contextual Risk Assessments)"
+    },
+    {
+      "displayName": "SYV Risk",
+      "name": "syvRisk",
+      "kind": "Grouping",
+      "description": "Serious Youth Violence risk level (for Contextual Risk Assessments)"
+    },
+    {
+      "displayName": "Radicalisation Risk",
+      "name": "radRisk",
+      "kind": "Grouping",
+      "description": "Radicalisation risk level (for Contextual Risk Assessments)"
+    }
+  ],
+  "dataViewMappings": [
+    {
+      "conditions": [
+        {
+          "caseNumber": { "max": 1 },
+          "eventType": { "max": 1 },
+          "eventLabel": { "max": 1 },
+          "startDate": { "max": 1 },
+          "endDate": { "max": 1 },
+          "severity": { "max": 1 },
+          "cceRisk": { "max": 1 },
+          "cseRisk": { "max": 1 },
+          "popcrRisk": { "max": 1 },
+          "syvRisk": { "max": 1 },
+          "radRisk": { "max": 1 },
+          "details": { "max": 5 }
+        }
+      ],
+      "table": {
+        "rows": {
+          "select": [
+            { "for": { "in": "caseNumber" } },
+            { "for": { "in": "eventType" } },
+            { "for": { "in": "eventLabel" } },
+            { "for": { "in": "startDate" } },
+            { "for": { "in": "endDate" } },
+            { "for": { "in": "severity" } },
+            { "for": { "in": "details" } },
+            { "for": { "in": "cceRisk" } },
+            { "for": { "in": "cseRisk" } },
+            { "for": { "in": "popcrRisk" } },
+            { "for": { "in": "syvRisk" } },
+            { "for": { "in": "radRisk" } }
+          ],
+          "dataReductionAlgorithm": {
+            "top": { "count": 30000 }
+          }
+        }
+      }
+    }
+  ],
+  "objects": {
+    "timeline": {
+      "displayName": "Timeline Settings",
+      "properties": {
+        "showHazards": {
+          "displayName": "Show Hazards",
+          "type": { "bool": true }
+        },
+        "showMissingEpisodes": {
+          "displayName": "Show Missing Episodes",
+          "type": { "bool": true }
+        },
+        "showAssetPlus": {
+          "displayName": "Show AssetPlus",
+          "type": { "bool": true }
+        },
+        "showInterventions": {
+          "displayName": "Show Interventions",
+          "type": { "bool": true }
+        },
+        "showBreaches": {
+          "displayName": "Show Breaches",
+          "type": { "bool": true }
+        },
+        "showOffences": {
+          "displayName": "Show Offences",
+          "type": { "bool": true }
+        },
+        "showPdats": {
+          "displayName": "Show PDATs",
+          "type": { "bool": true }
+        },
+        "showContacts": {
+          "displayName": "Show Contacts",
+          "type": { "bool": true }
+        },
+        "showCras": {
+          "displayName": "Show CRAs",
+          "type": { "bool": true }
+        },
+        "showForms": {
+          "displayName": "Show Forms",
+          "type": { "bool": true }
+        },
+        "showSuspensions": {
+          "displayName": "Show Suspensions",
+          "type": { "bool": true }
+        }
+      }
+    },
+    "appearance": {
+      "displayName": "Appearance",
+      "properties": {
+        "darkMode": {
+          "displayName": "Dark Mode",
+          "type": { "bool": true }
+        },
+        "nodeSpacing": {
+          "displayName": "Node Spacing",
+          "type": { "numeric": true }
+        }
+      }
+    }
+  },
+  "supportsEmptyDataView": true,
+  "supportsLandingPage": true,
+  "privileges": []
+}

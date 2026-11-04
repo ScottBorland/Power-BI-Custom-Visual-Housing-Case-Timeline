@@ -1,0 +1,24 @@
+{
+  "visual": {
+    "name": "housingCaseTimeline",
+    "displayName": "Housing Case Timeline",
+    "guid": "housingCaseTimelineVisual",
+    "visualClassName": "Visual",
+    "version": "1.0.0.0",
+    "description": "Interactive housing case management timeline visualization.",
+    "supportUrl": "https://github.com",
+    "gitHubUrl": ""
+  },
+  "apiVersion": "5.11.0",
+  "author": {
+    "name": "Vantage",
+    "email": "vantage@example.com"
+  },
+  "assets": {
+    "icon": "assets/icon.png"
+  },
+  "style": "style/visual.less",
+  "capabilities": "capabilities.json",
+  "dependencies": null,
+  "stringResources": []
+}
